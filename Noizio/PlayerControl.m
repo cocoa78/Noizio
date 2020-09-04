@@ -19,8 +19,11 @@ static NSString *const kPlayerControlKey = @"playerControl";
 }
 
 - (void)playbackFinished: (NSNotification *)notifacation{
-    [_player seekToTime:CMTimeMake(0, 1)];
-    [_player play];
+    AVPlayerItem *object = notifacation.object;
+    if (object && object == _playerItem && _isPlaying) {
+            [_player seekToTime:CMTimeMake(0, 1)];
+            [_player play];
+    }
 }
 
 - (void)dealloc{

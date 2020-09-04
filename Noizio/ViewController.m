@@ -31,6 +31,7 @@
     UIImage *leftBarButtonImage = [UIImage imageNamed:@"logo"];
     DSButton *leftButton = [DSButton new];
     [leftButton setImage:leftBarButtonImage forState:UIControlStateNormal];
+    [leftButton setImageEdgeInsets:UIEdgeInsetsMake(10, 0, 10, 75)];
     [leftButton addTarget:self action:@selector(leftBarButtonDidPressed) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
     
